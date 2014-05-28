@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
-
-gem 'github-pages'
+gem 'jekyll'
+gem 'kramdown'
+gem 'coderay'
 gem 'rake'
-gem 'rmagick'
-gem 'foreman'
-
+gem 'thor'
+gem 'activesupport'
+gem 'stringex'

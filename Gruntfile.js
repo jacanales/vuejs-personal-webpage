@@ -1,87 +1,118 @@
+'use strict';
 module.exports = function(grunt) {
+
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    concat: {
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc'
+      },
+      all: [
+        'Gruntfile.js',
+        'assets/js/*.js',
+        'assets/js/plugins/*.js',
+        '!assets/js/scripts.min.js'
+      ]
+    },
+    recess: {
       dist: {
-        src: [
-          'bower_components/jquery/jquery.min.js',
-          'bower_components/bootstrap/js/transition.js',
-          'bower_components/bootstrap/js/collapse.js',
-          '_assets/up.js'
-        ],
-        dest: 'js/up.js'
+        options: {
+          compile: true,
+          compress: true
+        },
+        files: {
+          'assets/css/main.min.css': [
+            'assets/less/main.less'
+          ]
+        }
+      },
+      dev: {
+        options: {
+          compile: true,
+          compress: false
+        },
+        files: {
+          'assets/css/main.css': [
+            'assets/less/main.less'
+          ]
+        }
       }
     },
     uglify: {
-      build: {
-        src: 'js/up.js',
-        dest: 'js/up.min.js'
+      dist: {
+        files: {
+          'assets/js/scripts.min.js': [
+            'assets/js/plugins/*.js',
+            'assets/js/_*.js'
+          ]
+        }
       }
     },
-    less: {
-      development: {
+    imagemin: {
+      dist: {
         options: {
-          paths: [
-            '_assets/',
-            'bower_components/bootstrap/less/',
-            'bower_components/font-awesome/less/'
-          ]
+          optimizationLevel: 7,
+          progressive: true
         },
-        files: {
-          'css/up.css': '_assets/up.less'
-        }
-      },
-      production: {
-        options: {
-          paths: [
-            '_assets/',
-            'bower_components/bootstrap/less/',
-            'bower_components/font-awesome/less/'
-          ],
-          yuicompress: true
-        },
-        files: {
-          'css/up.css': '_assets/up.less'
-        }
+        files: [{
+          expand: true,
+          cwd: 'images/',
+          src: '{,*/}*.{png,jpg,jpeg}',
+          dest: 'images/'
+        }]
+      }
+    },
+    svgmin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'images/',
+          src: '{,*/}*.svg',
+          dest: 'images/'
+        }]
       }
     },
     watch: {
-      scripts: {
-        files: ['_assets/*.js'],
-        tasks: ['concat', 'uglify'],
-        options: {
-          spawn: false,
-        },
-      },
       less: {
-        // We watch and compile sass files as normal but don't live reload here
-        files: ['_assets/*.less'],
-        tasks: ['less'],
-      },
-    },
-    copy: {
-      main: {
         files: [
-          {
-            expand: true,
-            flatten: true,
-            cwd: 'bower_components/font-awesome/fonts/',
-            src: '**',
-            dest: 'css/font/',
-            filter: 'isFile'
-          }
-        ]
+          'assets/less/*.less',
+          'assets/less/bootstrap/*.less'
+        ],
+        tasks: ['recess']
+      },
+      js: {
+        files: [
+          '<%= jshint.all %>'
+        ],
+        tasks: ['jshint','uglify']
       }
+    },
+    clean: {
+      dist: [
+        'assets/css/main.min.css',
+        'assets/js/scripts.min.js'
+      ]
     }
   });
 
-  // Load the plugins
-  grunt.loadNpmTasks('grunt-contrib-concat');
+  // Load tasks
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-recess');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-svgmin');
 
-  // Default task(s).
-  grunt.registerTask('default', ['concat', 'uglify', 'less', 'copy']);
+  // Register tasks
+  grunt.registerTask('default', [
+    'clean',
+    'recess',
+    'uglify',
+    'imagemin',
+    'svgmin'
+  ]);
+  grunt.registerTask('dev', [
+    'watch'
+  ]);
+
 };
