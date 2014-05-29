@@ -1,6 +1,6 @@
 title:            Jesús Antonio Canales Diez
-description:      Describe your website here.
-disqus_shortname: 
+description:      Analyst Developer. DevOp.
+disqus_shortname: tanque_tm
 #Your site's domain goes here. Leave localhost server or blank when working locally.
 url:              http://jacanales.github.io
 
@@ -11,16 +11,16 @@ owner:
   bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
   email:          jacanalesdiez@gmail.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        https://twitter.com/tanque_tm
-  facebook:       
-  github:         https://github.com/jacanales
+  twitter:        tanque_tm
+  facebook:       jacanalesdiez
+  github:         jacanales
   stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:         
+  linkedin:       jacanales
+  instagram:      tanque_tm
+  flickr:         67020922@N08
   tumblr:         
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:   
+  google_plus:    109967615991062738345
 
 # Background image to be tiled on all pages
 background: 
@@ -38,6 +38,9 @@ links:
     url: /theme-setup
   - title: ZonaDev
     url: http://www.zonadev.es
+    external: true
+  - title: Social Point
+    url: http://www.socialpoint.es
     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
