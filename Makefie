@@ -1,6 +1,0 @@
-push:
-    git subtree push --prefix=dist github.io master
-
-pull:
-    git subtree fetch --prefix=dist github.io master --squash
-    git subtree pull --prefix=dist github.io master --squash
