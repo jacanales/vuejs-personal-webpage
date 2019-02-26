@@ -5,3 +5,8 @@ push:
 pull:
 	  git fetch github.io master
 	  git subtree pull --prefix=dist github.io master --squash
+
+deploy:
+	  git add dist
+	  git commit -am "Deploy changes"
+	  make push

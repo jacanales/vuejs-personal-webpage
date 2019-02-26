@@ -1,6 +1,6 @@
 # jacanales.github.io
 
-> A personal description webpage
+> Personal web page using Vue.JS, webpack and Bulma
 
 ## Build Setup
 
