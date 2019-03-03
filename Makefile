@@ -7,6 +7,7 @@ pull:
 	  git subtree pull --prefix=dist github.io master --squash
 
 deploy:
+	  npm run build
 	  git add dist -f
 	  git commit -am "Deploy changes"
 	  make push
