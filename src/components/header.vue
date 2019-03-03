@@ -37,7 +37,7 @@
             Social Media
           </p>
           <ul class="menu-list">
-            <li v-for="media in social" :key="media.text">
+            <li v-for="media in social" :key="media.link">
               <a :href="media.link" class="icon-text" target="_blank">
                 <span class="icon is-small">
                   <i :class="'fab ' + media.icon"></i>
