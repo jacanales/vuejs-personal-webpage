@@ -123,8 +123,12 @@ export default {
   .hero-body {
     position: relative;
     div {
-      width: 50vw;
-      margin-left: 2vw;
+      width: 30vw;
+
+      &.presentation {
+        margin-left: 10vw;
+        width: 45vw;
+      }
     }
   }
 
@@ -137,6 +141,7 @@ export default {
       div {
         height: 100vh;
         width: calc(100vw - 3em);
+        margin-left: 3vw;
 
         &.presentation {
           padding-top: 30vh;
