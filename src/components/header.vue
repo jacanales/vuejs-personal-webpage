@@ -1,117 +1,94 @@
 <template>
-  <!-- Header -->
-  <section class="hero is-link is-fullheight is-fullheight-with-navbar">
-    <div class="hero-body has-same-height is-gapless">
-      <div class="presentation">
-        <h1 class="title is-1">
-          Jesús Antonio Canales Diez
-        </h1>
-        <h2 class="subtitle is-3">
-          Senior Backend Developer/Analyst
-        </h2>
-      </div>
-      <div>
-        <aside class="menu" id="lista">
-          <!-- Contacto -->
-          <p class="menu-label">
-            Contact
-          </p>
-          <ul class="menu-list">
-            <li v-for="source in contact" :key="source.data">
-              <a v-if="!source.link" role="button" class="icon-text" target="_blank">
-                <span class="icon is-small">
-                  <i :class="'fa ' + source.icon"></i>
-                  <!-- Telefono -->
-                </span> {{ source.data }}
-              </a>
-              <a v-if="source.link" :href="source.link" class="icon-text" target="_blank">
-                <span class="icon is-small">
-                  <i :class="'fa ' + source.icon"></i>
-                  <!-- Telefono -->
-                </span> {{ source.data }}
-              </a>
-            </li>
-          </ul>
-          <!-- Redes sociales -->
-          <p class="menu-label">
-            Social Media
-          </p>
-          <ul class="menu-list">
-            <li v-for="media in social" :key="media.link">
-              <a :href="media.link" class="icon-text" target="_blank">
-                <span class="icon is-small">
-                  <i :class="'fab ' + media.icon"></i>
-                </span> {{ media.text }}
-              </a>
-            </li>
-          </ul>
-
-          <!-- Hobbies -->
-          <p class="menu-label">
-            Hobbies
-          </p>
-          <ul class="menu-list">
-            <li v-for="hobby in hobbies" :key="hobby"><a role="button">{{ hobby }}</a></li>
-          </ul>
-        </aside>
-      </div>
-    </div>
-  </section>
+    <!-- Header -->
+    <section class="hero is-link is-fullheight with-bg">
+        <div class="hero-body has-same-height is-gapless">
+            <div class="presentation">
+                <figure class="image is-128x128">
+                    <img class="is-rounded" src="images/profile.jpg">
+                </figure>
+                <h1 class="title is-1">
+                    Jesús Antonio Canales Diez
+                </h1>
+                <h2 class="subtitle is-3">
+                    Senior Backend Developer
+                </h2>
+                <nav class="tabs centered">
+                    <ul class="social-list">
+                        <li v-for="source in contact" :key="source.data">
+                            <a v-if="!source.link"  role="button" class="icon-text" target="_blank" :title="source.data">
+                              <span class="icon is-small">
+                                <i :class="'fa ' + source.icon"></i>
+                                  <!-- Telefono -->
+                              </span>
+                            </a>
+                            <a v-if="source.link" :href="source.link" class="icon-text" target="_blank" :title="source.data">
+                              <span class="icon is-small">
+                                <i :class="'fa ' + source.icon"></i>
+                              </span>
+                            </a>
+                        </li>
+                        <li v-for="media in social" :key="media.link">
+                            <a :href="media.link" :class="'icon-text ' + media.name" target="_blank" :title="media.text">
+                              <span class="icon is-small">
+                                <i :class="'fab ' + media.icon"></i>
+                              </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
 const contact = [
   {
-    data: '+34 669 33 32 83',
-    icon: 'fa-phone',
-    link: null,
-  },
-  {
     data: 'jacanalesdiez@gmail.com',
     icon: 'fa-envelope',
     link: 'mailto:jacanalesdiez@gmail.com',
-  },
-  {
-    data: 'http://www.zonadev.es',
-    icon: 'fa-link',
-    link: 'http://www.zonadev.es',
   },
 ];
 
 const social = [
   {
+    name: 'github',
     link: 'https://github.com/jacanales/',
     icon: 'fa-github',
     text: 'jacanales',
   },
   {
+    name: 'facebook',
     link: 'https://www.facebook.com/jacanalesdiez',
     icon: 'fa-facebook',
     text: 'jacanalesdiez',
   },
   {
+    name: 'linkedin',
     link: 'https://www.linkedin.com/in/jacanales/',
     icon: 'fa-linkedin',
     text: 'jacanales',
   },
   {
+    name: 'twitter',
     link: 'https://twitter.com/tanque_tm',
     icon: 'fa-twitter',
     text: 'tanque_tm',
   },
   {
+    name: 'lastfm',
     link: 'https://www.last.fm/user/tanque_tm',
     icon: 'fa-lastfm',
     text: 'tanque_tm',
   },
 ];
 
-const hobbies = ['Dance', 'Sport', 'Theather/Cinema'];
-
 export default {
   name: 'headerintro',
-  data() { return { contact, social, hobbies }; },
+  data() { return { contact, social }; },
 };
+
+
 </script>
 
 <style lang="scss">
@@ -120,16 +97,76 @@ export default {
     font-size: 12pt;
   }
 
+  .hero {
+    &.with-bg {
+        background-image: linear-gradient(rgba(31, 152, 239, 0.2), rgba(15, 4, 21, 0.6)), linear-gradient(rgba(164, 174, 197, 0.8), rgba(0, 0, 0, 1)), url(/images/city.jpg);
+        background-size: 100%;
+    }
+  }
+
   .hero-body {
     position: relative;
     div {
       width: 30vw;
 
       &.presentation {
-        margin-left: 10vw;
-        width: 45vw;
+        width: 100vw;
+        text-align: center;
       }
     }
+  }
+
+  figure {
+    margin: 0px auto 2vw;
+
+    img {
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1);
+    }
+  }
+
+  nav {
+    &.centered {
+      margin: 0 auto;
+      width: max-content;
+    }
+  }
+
+  $size-icon: 20px;
+
+  $spotify: #1ed760;
+  $twitter: #1da1f2;
+  $github: #ffdd57;
+  $facebook: #3b5998;
+  $lastfm: #b90000;
+  $linkedin: #0073b1;
+
+  .social-list {
+    font-size: $size-icon;
+
+    a {
+      border: none;
+    }
+  }
+
+  a.facebook:hover span {
+    color: $facebook!important;
+  }
+  a.spotify:hover span {
+    color: $spotify!important;
+  }
+  a.twitter:hover span {
+    color: $twitter!important;
+  }
+  a.github:hover span {
+    color: $github!important;
+  }
+  a.lastfm:hover span {
+    color: $lastfm!important;
+  }
+  a.linkedin:hover span {
+    color: $linkedin!important;
   }
 
   @media screen and (max-width: 48em) {
@@ -155,21 +192,5 @@ export default {
         }
       }
     }
-
-    /*.hero-body:before {
-      content: '';
-      float: right;
-      display: block;
-      //width: 300px;
-      //height: 150px;
-      //margin: 0 0 15px 15px;
-    }
-
-    .container aside {
-      position: relative;
-      bottom: 0;
-      //right: 0;
-      //width: 300px;
-    }*/
   }
 </style>

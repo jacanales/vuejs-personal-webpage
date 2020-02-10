@@ -6,15 +6,18 @@
 
 <script>
 export default {
-  name: 'App',
-};
+  name: 'App'
+}
 </script>
 
 <style>
 #app {
-  #font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  #color: #2c3e50;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.menu-list a {
+    color: #ffffff;
 }
 </style>
