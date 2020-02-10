@@ -137,7 +137,7 @@ export default {
 
   $spotify: #1ed760;
   $twitter: #1da1f2;
-  $github: #ffdd57;
+  $github: #6b6b6b;
   $facebook: #3b5998;
   $lastfm: #b90000;
   $linkedin: #0073b1;
