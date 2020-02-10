@@ -99,7 +99,7 @@ export default {
 
   .hero {
     &.with-bg {
-        background-image: linear-gradient(rgba(31, 152, 239, 0.2), rgba(15, 4, 21, 0.6)), linear-gradient(rgba(164, 174, 197, 0.8), rgba(0, 0, 0, 1)), url(/images/city.jpg);
+        background-image: linear-gradient(rgba(31,152,239,.2),rgba(15,4,21,.4)),linear-gradient(rgba(164,174,197,.4),#000),url(/images/city.jpg);
         background-size: 100%;
     }
   }
