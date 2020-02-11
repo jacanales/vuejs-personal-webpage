@@ -1,15 +1,11 @@
 <template lang="html">
-  <div id="home">
-    <navbar/>
-    <headerintro/>
-  </div>
+  <headerintro/>
 </template>
 <script>
-import navbar from '../components/navbar';
 import headerintro from '../components/header';
 
 export default {
   name: 'personal',
-  components: { navbar, headerintro },
+  components: { headerintro },
 };
 </script>

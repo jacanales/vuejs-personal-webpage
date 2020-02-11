@@ -1,8 +1,8 @@
 <template>
     <!-- Header -->
-    <section class="hero is-link is-fullheight with-bg">
-        <div class="hero-body has-same-height is-gapless">
-            <div class="presentation">
+    <section class="section hero is-link is-fullheight with-bg">
+        <div class="hero-body">
+            <div id="presentation" class="container">
                 <figure class="image is-128x128">
                     <img class="is-rounded" src="images/profile.jpg">
                 </figure>
@@ -13,8 +13,8 @@
                     Senior Backend Developer
                 </h2>
                 <nav class="tabs centered">
-                    <ul class="social-list">
-                        <li v-for="source in contact" :key="source.data">
+                    <div class="columns is-gapless is-mobile social-list">
+                        <div class="column" v-for="source in contact" :key="source.data">
                             <a v-if="!source.link"  role="button" class="icon-text" target="_blank" :title="source.data">
                               <span class="icon is-small">
                                 <i :class="'fa ' + source.icon"></i>
@@ -26,15 +26,15 @@
                                 <i :class="'fa ' + source.icon"></i>
                               </span>
                             </a>
-                        </li>
-                        <li v-for="media in social" :key="media.link">
+                        </div>
+                        <div class="column" v-for="media in social" :key="media.link">
                             <a :href="media.link" :class="'icon-text ' + media.name" target="_blank" :title="media.text">
-                              <span class="icon is-small">
-                                <i :class="'fab ' + media.icon"></i>
-                              </span>
+                                <span class="icon is-small">
+                                    <i :class="'fab ' + media.icon"></i>
+                                </span>
                             </a>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>
@@ -100,16 +100,16 @@ export default {
   .hero {
     &.with-bg {
         background-image: linear-gradient(rgba(31,152,239,.2),rgba(15,4,21,.4)),linear-gradient(rgba(164,174,197,.4),#000),url(/images/city.jpg);
-        background-size: 100%;
+
+        background-size: cover;
     }
   }
 
   .hero-body {
     position: relative;
     div {
-      width: 30vw;
-
-      &.presentation {
+      &#presentation {
+        transition: all 1.5s,height 1.5s,transform 1.5s;
         width: 100vw;
         text-align: center;
       }
@@ -171,19 +171,17 @@ export default {
 
   @media screen and (max-width: 48em) {
     .hero-body {
-      display: block !important;
-      height: calc(200vh + 6rem);
-      width: 100vw;
-      min-width: 100vw !important;
-      div {
-        height: 100vh;
-        width: calc(100vw - 3em);
-        margin-left: 3vw;
+      nav {
+        width: 80vw;
 
-        &.presentation {
-          padding-top: 30vh;
-          top: 20%;
+        a {
+          padding: 0.5em 0.8em;
+          border: none;
+          font-size: 15px;
         }
+      }
+
+      div {
         .title.is-1 {
           font-size: 1.5rem;
         }
