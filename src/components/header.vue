@@ -2,7 +2,7 @@
     <!-- Header -->
     <section class="section hero is-link is-fullheight with-bg">
         <div class="hero-body">
-            <div id="presentation" class="container">
+            <div id="presentation" class="container hidden">
                 <figure class="image is-128x128">
                     <img class="is-rounded" src="images/profile.jpg">
                 </figure>
@@ -13,17 +13,17 @@
                     Senior Backend Developer
                 </h2>
                 <nav class="tabs centered">
-                    <div class="columns is-gapless is-mobile social-list">
+                    <div class="columns is-variable is-mobile is-multiline social-list">
                         <div class="column" v-for="source in contact" :key="source.data">
-                            <a v-if="!source.link"  role="button" class="icon-text" target="_blank" :title="source.data">
+                            <a v-if="!source.link"  role="button" :class="'icon-text ' + source.name" target="_blank" :title="source.data">
                               <span class="icon is-small">
-                                <i :class="'fa ' + source.icon"></i>
+                                <i :class="source.icon"></i>
                                   <!-- Telefono -->
                               </span>
                             </a>
-                            <a v-if="source.link" :href="source.link" class="icon-text" target="_blank" :title="source.data">
+                            <a v-if="source.link" :href="source.link" :class="'icon-text ' + source.name" target="_blank" :title="source.data">
                               <span class="icon is-small">
-                                <i :class="'fa ' + source.icon"></i>
+                                <i :class="source.icon"></i>
                               </span>
                             </a>
                         </div>
@@ -42,11 +42,20 @@
 </template>
 
 <script>
+import $ from 'jquery'
+
 const contact = [
   {
+    name: 'gmail',
     data: 'jacanalesdiez@gmail.com',
-    icon: 'fa-envelope',
+    icon: 'fa fa-envelope',
     link: 'mailto:jacanalesdiez@gmail.com',
+  },
+  {
+    name: 'skype',
+    data: 'jacanalesdiez@gmail.com',
+    icon: 'fab fa-skype',
+    link: 'jacanalesdiez@gmail.com',
   },
 ];
 
@@ -55,6 +64,12 @@ const social = [
     name: 'github',
     link: 'https://github.com/jacanales/',
     icon: 'fa-github',
+    text: 'jacanales',
+  },
+  {
+    name: 'gitlab',
+    link: 'https://gitlab.com/jacanales/',
+    icon: 'fa-gitlab',
     text: 'jacanales',
   },
   {
@@ -88,6 +103,10 @@ export default {
   data() { return { contact, social }; },
 };
 
+$(document).ready(function () {
+    $('#presentation').toggleClass('hidden')
+  })
+
 
 </script>
 
@@ -110,8 +129,13 @@ export default {
     div {
       &#presentation {
         transition: all 1.5s,height 1.5s,transform 1.5s;
+        -webkit-transition: all 1.5s, height 1.5s, -webkit-transform 1.5s;
         width: 100vw;
         text-align: center;
+      }
+      &.hidden {
+          opacity: 0;
+          margin-top: -400px;
       }
     }
   }
@@ -141,6 +165,8 @@ export default {
   $facebook: #3b5998;
   $lastfm: #b90000;
   $linkedin: #0073b1;
+  $gitlab: #fa7035;
+  $skype: #00aff0;
 
   .social-list {
     font-size: $size-icon;
@@ -162,11 +188,17 @@ export default {
   a.github:hover span {
     color: $github!important;
   }
+  a.gitlab:hover span {
+    color: $gitlab!important;
+  }
   a.lastfm:hover span {
     color: $lastfm!important;
   }
   a.linkedin:hover span {
     color: $linkedin!important;
+  }
+  a.skype:hover span {
+    color: $skype!important;
   }
 
   @media screen and (max-width: 48em) {
@@ -183,7 +215,7 @@ export default {
 
       div {
         .title.is-1 {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
         }
         .subtitle.is-3 {
           font-size: 1rem;
