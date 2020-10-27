@@ -1,4 +1,4 @@
-name: main
+name: Check NPM Modules
 on: [push]
 jobs:
   build-and-test:
