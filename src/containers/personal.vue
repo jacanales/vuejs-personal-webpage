@@ -1,11 +1,15 @@
 <template lang="html">
-  <headerintro/>
+  <div>
+    <headerintro/>
+    <skills/>
+  </div>
 </template>
 <script>
 import headerintro from '../components/header';
+import skills from '../components/skills';
 
 export default {
   name: 'personal',
-  components: { headerintro },
+  components: { headerintro, skills },
 };
 </script>
