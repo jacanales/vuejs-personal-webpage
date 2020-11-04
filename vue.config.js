@@ -7,7 +7,7 @@ module.exports = {
         plugins: [
             new HtmlWebpackPlugin({
                 hash: true,
-                filename: './dist/index.html' //relative to root of the application
+                filename: './index.html' //relative to root of the application
             })
        ]
    }
