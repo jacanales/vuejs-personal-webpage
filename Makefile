@@ -27,6 +27,7 @@ push-force:
 
 build:
 	yarn build
+	cp .github/CNAME dist
 	git add dist -f
 	git commit -am "Deploy changes"
 
