@@ -8,32 +8,32 @@
                 <div class="columns is-variable is-mobile is-multiline social-list">
                     <div class="column">
                         <figure class="image skill is-96x96">
-                            <img class="is-rounded" src="images/skills/golang.png">
+                            <img class="is-rounded" src="images/skills/golang.png" title="golang">
                         </figure>
                     </div>
                     <div class="column">
                         <figure class="image skill is-96x96">
-                            <img class="is-rounded" src="images/skills/php7.png">
+                            <img class="is-rounded" src="images/skills/php7.png" title="php7">
                         </figure>
                     </div>
                     <div class="column">
                         <figure class="image skill is-96x96">
-                            <img class="is-rounded" src="images/skills/aws.png">
+                            <img class="is-rounded" src="images/skills/aws.png" title="aws">
                         </figure>
                     </div>
                     <div class="column">
                         <figure class="image skill is-96x96">
-                            <img class="is-rounded" src="images/skills/mysql.png">
+                            <img class="is-rounded" src="images/skills/mysql.png" title="mysql">
                         </figure>
                     </div>
                     <div class="column">
                         <figure class="image skill is-96x96">
-                            <img class="is-rounded" src="images/skills/docker.png">
+                            <img class="is-rounded" src="images/skills/docker.png" title="docker">
                         </figure>
                     </div>
                     <div class="column">
                         <figure class="image skill is-96x96">
-                            <img class="is-rounded" src="images/skills/kubernetes.png">
+                            <img class="is-rounded" src="images/skills/kubernetes.png" title="kubernetes">
                         </figure>
                     </div>
                 </div>
