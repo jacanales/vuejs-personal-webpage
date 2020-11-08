@@ -14,7 +14,7 @@
                 </h2>
                 <nav class="tabs centered">
                     <div class="columns is-variable is-mobile is-multiline social-list">
-                        <div class="column" v-for="source in contact" :key="source.data">
+                        <div class="column" v-for="source in contact" :key="source.name">
                             <a v-if="!source.link"  role="button" :class="'icon-text ' + source.name" target="_blank" :title="source.data">
                               <span class="icon is-small">
                                 <i :class="source.icon"></i>
@@ -105,9 +105,7 @@ export default {
 
 $(document).ready(function () {
     $('#presentation').toggleClass('hidden')
-  })
-
-
+});
 </script>
 
 <style lang="scss">

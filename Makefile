@@ -40,3 +40,6 @@ deploy: build push ## Deploy changes
 configure: ## Configure subtree
 	git remote add -f github.io git@github.com:jacanales/jacanales.github.io.git || true
 	git subtree add --prefix dist/ github.io master
+
+dev:
+	yarn serve

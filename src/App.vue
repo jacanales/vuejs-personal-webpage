@@ -5,6 +5,10 @@
 </template>
 
 <script>
+import konami from '@/components/konami'
+
+konami.run()
+
 export default {
   name: 'App'
 }
