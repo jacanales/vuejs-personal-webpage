@@ -35,7 +35,7 @@ pull: ## Update subtree
 	git fetch github.io master
 	git subtree pull --prefix=dist github.io master --squash
 
-deploy: build push ## Deploy changes
+deploy: pull build push ## Deploy changes
 
 configure: ## Configure subtree
 	git remote add -f github.io git@github.com:jacanales/jacanales.github.io.git || true
