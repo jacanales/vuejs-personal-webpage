@@ -41,5 +41,9 @@ configure: ## Configure subtree
 	git remote add -f github.io git@github.com:jacanales/jacanales.github.io.git || true
 	git subtree add --prefix dist/ github.io master
 
+fix-dist:
+	rm -rf dist
+	git read-tree --prefix=dist -u github.io/master
+
 dev:
 	yarn serve
