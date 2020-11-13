@@ -1,4 +1,6 @@
-# vuejs-jacanales.github.io
+# Personal presentation page
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/176c4896-19a9-4528-8d04-52f6a30444c7/deploy-status)](https://app.netlify.com/sites/jacanales/deploys)
 
 ## Project setup
 ```
