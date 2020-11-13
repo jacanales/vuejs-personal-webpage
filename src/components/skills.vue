@@ -1,5 +1,5 @@
 <template>
-    <section class="skills">
+    <section class="skills hidden">
         <div class="hero-body">
             <h2 class="subtitle is-1">
                 Skills
@@ -61,5 +61,9 @@
             -moz-box-shadow:0 0 10px 1px #000;
             -webkit-box-shadow:0 0 10px 1px #000;
         }
+    }
+
+    section.hidden {
+        display: none;
     }
 </style>
