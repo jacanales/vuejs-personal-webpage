@@ -6,5 +6,5 @@ jobs:
     name: Build and test
     steps:
       - uses: actions/checkout@v2
-      - uses: bahmutov/npm-install@v1.7.2
+      - uses: bahmutov/npm-install@v1.7.3
       - run: yarn build
