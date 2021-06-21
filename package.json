@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "bulma": "^0.9.3",
-    "core-js": "^3.14.0",
+    "core-js": "^3.15.0",
     "html-webpack-plugin": "^4.5.1",
     "jquery": "^3.6.0",
     "node-sass": "^5.0.0",
