@@ -1,14 +1,20 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-    publicPath:'',
-    configureWebpack: {
-        mode: 'production',
-        plugins: [
-            new HtmlWebpackPlugin({
-                hash: true,
-                filename: './plugin/index.html' //relative to root of the application
-            })
-       ]
-   }
+class MyPlugin {
+  apply (compiler) {
+    compiler.hooks.compilation.tap('MyPlugin', (compilation) => {
+      // Static Plugin interface |compilation |HOOK NAME | register listener 
+      HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(
+        'MyPlugin', // <-- Set a meaningful name here for stacktraces
+        (data, cb) => {
+          // Manipulate the content
+          data.html += 'The Magic Footer'
+          // Tell webpack to move on
+          cb(null, data)
+        }
+      )
+    })
+  }
 }
+
+module.exports = new MyPlugin
