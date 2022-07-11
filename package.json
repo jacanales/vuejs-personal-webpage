@@ -15,7 +15,7 @@
     "node-sass": "^6.0.1",
     "sass-loader": "^10.1.1",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.16"
+    "vue-router": "^4.1.1"
   },
   "peerDependencies": {
     "webpack": "^5.2.0"
