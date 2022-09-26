@@ -1,3 +1,12 @@
+import { createApp } from 'vue'
+// import the root component App from a single-file component.
+import App from './App.vue'
+
+const app = createApp(App)
+
+app.mount('#app')
+
+/*
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router';
@@ -10,3 +19,4 @@ new Vue({
   componens: { App },
   render: h => h(App),
 }).$mount('#app')
+*/

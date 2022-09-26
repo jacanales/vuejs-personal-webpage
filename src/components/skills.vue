@@ -44,7 +44,7 @@
 
 <script>
     export default {
-        name: 'Skills'
+        name: 'owned_skills'
     };
 </script>
 

@@ -10,7 +10,7 @@
                     Jesús Antonio Canales Diez
                 </h1>
                 <h2 class="subtitle is-3">
-                    Senior Backend Developer
+                    Software Engineering Manager <br /> Tech Lead
                 </h2>
                 <nav class="tabs centered">
                     <div class="columns is-variable is-mobile is-multiline social-list">
@@ -99,7 +99,7 @@ const social = [
 ];
 
 export default {
-  name: 'headerintro',
+  name: 'header_intro',
   data() { return { contact, social }; },
 };
 
@@ -116,7 +116,7 @@ $(document).ready(function () {
 
   .hero {
     &.with-bg {
-        background-image: linear-gradient(rgba(31,152,239,.2),rgba(15,4,21,.4)),linear-gradient(rgba(164,174,197,.4),#000),url(/images/city.jpg);
+        background-image: linear-gradient(rgba(31,152,239,.2),rgba(15,4,21,.4)),linear-gradient(rgba(164,174,197,.4),#000),url(/public/images/city.jpg);
 
         background-size: cover;
     }
