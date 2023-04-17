@@ -11,7 +11,7 @@
     "@babel/eslint-parser": "^7.21.3",
     "bulma": "^0.9.4",
     "core-js": "^3.30.1",
-    "html-webpack-plugin": "^5.5.0",
+    "html-webpack-plugin": "^5.5.1",
     "jquery": "^3.6.4",
     "sass": "^1.62.0",
     "sass-loader": "^13.2.2",
