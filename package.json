@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.22.11",
     "bulma": "^0.9.4",
-    "core-js": "^3.32.1",
+    "core-js": "^3.32.2",
     "html-webpack-plugin": "^5.5.3",
     "jquery": "^3.7.1",
     "sass": "^1.66.1",
