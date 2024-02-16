@@ -66,4 +66,8 @@
     section.hidden {
         display: none;
     }
+
+    .columns.is-variable {
+      --columnGap: 0;
+    }
 </style>

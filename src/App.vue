@@ -28,4 +28,5 @@ export default {
 .menu-list a {
     color: #ffffff;
 }
+
 </style>

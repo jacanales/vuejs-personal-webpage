@@ -10,7 +10,10 @@
                     Jesús Antonio Canales Diez
                 </h1>
                 <h2 class="subtitle is-3">
-                    Software Engineering Manager <br /> Tech Lead
+                    Software Engineering Manager
+                </h2>
+                <h2 class="subtitle is-3">
+                    Platform Tech Lead
                 </h2>
                 <nav class="tabs centered">
                     <div class="columns is-variable is-mobile is-multiline social-list">
