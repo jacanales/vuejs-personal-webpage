@@ -15,7 +15,7 @@
     "jquery": "^3.7.1",
     "sass": "^1.76.0",
     "sass-loader": "^14.2.1",
-    "vue": "^3.4.25",
+    "vue": "^3.4.26",
     "vue-router": "4"
   },
   "peerDependencies": {
