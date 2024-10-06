@@ -1,49 +1,3 @@
-<template>
-    <!-- Header -->
-    <section class="section hero is-link is-fullheight with-bg">
-        <div class="hero-body">
-            <div id="presentation" class="container hidden">
-                <figure class="image is-128x128">
-                    <img class="is-rounded" src="images/profile.jpg">
-                </figure>
-                <h1 class="title is-1">
-                    Jesús Antonio Canales Diez
-                </h1>
-                <h2 class="subtitle is-3">
-                    Software Engineering Manager
-                </h2>
-                <h2 class="subtitle is-3">
-                    Platform Tech Lead
-                </h2>
-                <nav class="tabs centered">
-                    <div class="columns is-variable is-mobile is-multiline social-list">
-                        <div class="column" v-for="source in contact" :key="source.name">
-                            <a v-if="!source.link"  role="button" :class="'icon-text ' + source.name" target="_blank" :title="source.data">
-                              <span class="icon is-small">
-                                <i :class="source.icon"></i>
-                                  <!-- Telefono -->
-                              </span>
-                            </a>
-                            <a v-if="source.link" :href="source.link" :class="'icon-text ' + source.name" target="_blank" :title="source.data">
-                              <span class="icon is-small">
-                                <i :class="source.icon"></i>
-                              </span>
-                            </a>
-                        </div>
-                        <div class="column" v-for="media in social" :key="media.link">
-                            <a :href="media.link" :class="'icon-text ' + media.name" target="_blank" :title="media.text">
-                                <span class="icon is-small">
-                                    <i :class="'fab ' + media.icon"></i>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </section>
-</template>
-
 <script>
 import $ from 'jquery'
 
@@ -101,15 +55,62 @@ const social = [
   },
 ];
 
+$(document).ready(function () {
+  $('#presentation').toggleClass('hidden')
+});
+
+
 export default {
   name: 'header_intro',
   data() { return { contact, social }; },
 };
-
-$(document).ready(function () {
-    $('#presentation').toggleClass('hidden')
-});
 </script>
+
+<template>
+    <!-- Header -->
+    <section class="section hero is-link is-fullheight with-bg">
+        <div class="hero-body">
+            <div id="presentation" class="container hidden">
+                <figure class="image is-128x128">
+                    <img class="is-rounded" src="@/assets/images/profile.jpg">
+                </figure>
+                <h1 class="title is-1">
+                    Jesús Antonio Canales Diez
+                </h1>
+                <h2 class="subtitle is-3">
+                    Software Engineering Manager
+                </h2>
+                <h2 class="subtitle is-3">
+                    Platform Tech Lead
+                </h2>
+                <nav class="tabs centered">
+                    <div class="columns is-variable is-mobile is-multiline social-list">
+                        <div class="column" v-for="source in contact" :key="source.name">
+                            <a v-if="!source.link"  role="button" :class="'icon-text ' + source.name" target="_blank" :title="source.data">
+                              <span class="icon is-small">
+                                <i :class="source.icon"></i>
+                                  <!-- Telefono -->
+                              </span>
+                            </a>
+                            <a v-if="source.link" :href="source.link" :class="'icon-text ' + source.name" target="_blank" :title="source.data">
+                              <span class="icon is-small">
+                                <i :class="source.icon"></i>
+                              </span>
+                            </a>
+                        </div>
+                        <div class="column" v-for="media in social" :key="media.link">
+                            <a :href="media.link" :class="'icon-text ' + media.name" target="_blank" :title="media.text">
+                                <span class="icon is-small">
+                                    <i :class="'fab ' + media.icon"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </section>
+</template>
 
 <style lang="scss">
   .menu-label {
@@ -224,4 +225,9 @@ $(document).ready(function () {
       }
     }
   }
+
+  .columns.is-variable {
+    --columnGap: 0;
+  }
 </style>
+

@@ -1,0 +1,112 @@
+.menu-label {
+    color: #fff000;
+    font-size: 12pt;
+  }
+
+  .hero {
+    &.with-bg {
+        background-image: linear-gradient(rgba(31,152,239,.2),rgba(15,4,21,.4)),linear-gradient(rgba(164,174,197,.4),#000),url(/public/images/city.jpg);
+
+        background-size: cover;
+    }
+  }
+
+  .hero-body {
+    position: relative;
+    div {
+      &#presentation {
+        transition: all 1.5s,height 1.5s,transform 1.5s;
+        -webkit-transition: all 1.5s, height 1.5s, -webkit-transform 1.5s;
+        width: 100vw;
+        text-align: center;
+      }
+      &.hidden {
+          opacity: 0;
+          margin-top: -400px;
+      }
+    }
+  }
+
+  figure {
+    margin: 0px auto 2vw;
+
+    img {
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1);
+    }
+  }
+
+  nav {
+    &.centered {
+      margin: 0 auto;
+      width: max-content;
+    }
+  }
+
+  $size-icon: 20px;
+
+  $spotify: #1ed760;
+  $twitter: #1da1f2;
+  $github: #6b6b6b;
+  $facebook: #3b5998;
+  $lastfm: #b90000;
+  $linkedin: #0073b1;
+  $gitlab: #fa7035;
+  $skype: #00aff0;
+
+  .social-list {
+    font-size: $size-icon;
+
+    a {
+      border: none;
+    }
+  }
+
+  a.facebook:hover span {
+    color: $facebook!important;
+  }
+  a.spotify:hover span {
+    color: $spotify!important;
+  }
+  a.twitter:hover span {
+    color: $twitter!important;
+  }
+  a.github:hover span {
+    color: $github!important;
+  }
+  a.gitlab:hover span {
+    color: $gitlab!important;
+  }
+  a.lastfm:hover span {
+    color: $lastfm!important;
+  }
+  a.linkedin:hover span {
+    color: $linkedin!important;
+  }
+  a.skype:hover span {
+    color: $skype!important;
+  }
+
+  @media screen and (max-width: 48em) {
+    .hero-body {
+      nav {
+        width: 80vw;
+
+        a {
+          padding: 0.5em 0.8em;
+          border: none;
+          font-size: 15px;
+        }
+      }
+
+      div {
+        .title.is-1 {
+          font-size: 1.3rem;
+        }
+        .subtitle.is-3 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
