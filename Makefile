@@ -17,7 +17,7 @@ help:
 
 .PHONY: push pull
 push:
-	  git subtree push --prefix=dist github.io master
+	git subtree push --prefix=dist github.io master
 
 push-force:
 	#git checkout master # you can avoid this line if you are in master...
@@ -26,7 +26,7 @@ push-force:
 	git branch -D gh-pages # delete the local gh-pages because you will need it: ref
 
 build:
-	yarn build
+	npm run build
 	cp .github/CNAME dist
 	git add dist -f
 	git commit -am "Deploy changes"
@@ -46,4 +46,4 @@ fix-dist:
 	git read-tree --prefix=dist -u github.io/master
 
 dev:
-	yarn serve
+	npm run dev
