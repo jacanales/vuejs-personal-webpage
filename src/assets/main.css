@@ -1,5 +1,9 @@
 @import './base.css';
 
+:root {
+  --bulma-column-gap: 0;
+}
+
 #app_container {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
