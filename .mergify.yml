@@ -2,14 +2,14 @@ pull_request_rules:
   - name: Automatic merge on dependabot requests
     conditions:
       - "author=dependabot[bot]"
-      - "base=master"
+      - "base=main"
       - check-success=Build and test
     actions:
       merge:
         method: merge
   - name: Automatic merge on mergify requests
     conditions:
-      - "base=master"
+      - "base=main"
       - "head~=^mergify/"
       - check-success=Build and test
     actions:
