@@ -70,8 +70,7 @@ export default {
           <img class="is-rounded" src="@/assets/images/profile.jpg" />
         </figure>
         <h1 class="title is-1">Jesús Antonio Canales Diez</h1>
-        <h2 class="subtitle is-3">Software Engineering Manager</h2>
-        <h2 class="subtitle is-3">Platform Tech Lead</h2>
+        <h2 class="subtitle is-3">Security Software Engineering</h2>
         <nav class="tabs centered">
           <div class="columns is-variable is-mobile is-multiline social-list">
             <div class="column" v-for="source in contact" :key="source.name">
