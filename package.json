@@ -43,7 +43,7 @@
     "sass-embedded": "^1.97.2",
     "typescript": "~5.9.3",
     "vite-plugin-vue-devtools": "^8.0.5",
-    "vitest": "^4.0.16",
+    "vitest": "^4.0.17",
     "vue-tsc": "^3.2.2"
   },
   "engines": {
