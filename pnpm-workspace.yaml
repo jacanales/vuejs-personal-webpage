@@ -1,0 +1,9 @@
+# pnpm configuration (pnpm >= 12 reads project settings from this file).
+# https://pnpm.io/settings
+allowBuilds:
+  '@parcel/watcher': true
+
+# Fail the install on missing or invalid peer dependencies instead of warning,
+# so a peer conflict like vite 8 vs vite-plugin-vue-devtools is caught here
+# rather than in CI's build step.
+strictPeerDependencies: true

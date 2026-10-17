@@ -26,7 +26,7 @@ push-force:
 	git branch -D gh-pages # delete the local gh-pages because you will need it: ref
 
 build:
-	npm run build
+	pnpm run build
 	cp .github/CNAME dist
 	git add dist -f
 	git commit -am "Deploy changes"
@@ -46,4 +46,4 @@ fix-dist:
 	git read-tree --prefix=dist -u github.io/master
 
 dev:
-	npm run dev
+	pnpm run dev

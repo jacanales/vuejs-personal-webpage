@@ -14,51 +14,73 @@ TypeScript cannot handle type information for `.vue` imports by default, so we r
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
+## Package manager
+
+This project uses [pnpm](https://pnpm.io) instead of npm. The required version is
+pinned in the `packageManager` field of `package.json`, and project settings live in
+`pnpm-workspace.yaml` (pnpm 12 no longer reads the `pnpm` field or non-registry
+settings from `.npmrc`).
+
+```sh
+# Get the pinned pnpm version
+corepack enable
+
+# Or install pnpm globally
+npm install -g pnpm
+```
+
+Always install from the committed lockfile, so the resolution this project was
+verified with is the one you get:
+
+```sh
+pnpm install --frozen-lockfile
+```
+
 ## Project Setup
 
 ```sh
-npm install
+pnpm install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
-npm run dev
+pnpm run dev
 ```
 
 ### Type-Check, Compile and Minify for Production
 
 ```sh
-npm run build
+pnpm run build
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
-npm run test:unit
+pnpm run test:unit
 ```
 
 ### Run End-to-End Tests with [Playwright](https://playwright.dev)
 
 ```sh
 # Install browsers for the first run
-npx playwright install
+pnpm exec playwright install
 
 # When testing on CI, must build the project first
-npm run build
+pnpm run build
 
 # Runs the end-to-end tests
-npm run test:e2e
+pnpm run test:e2e
 # Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
+pnpm run test:e2e -- --project=chromium
 # Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
+pnpm run test:e2e -- tests/example.spec.ts
 # Runs the tests in debug mode
-npm run test:e2e -- --debug
+pnpm run test:e2e -- --debug
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
-npm run lint
+pnpm run lint
 ```
