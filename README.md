@@ -36,6 +36,29 @@ verified with is the one you get:
 pnpm install --frozen-lockfile
 ```
 
+## TypeScript
+
+This project ships two compilers, and `type-check` runs both:
+
+| Package | Version | Used by |
+| --- | --- | --- |
+| `typescript` | 5.9.3 | `vue-tsc` and `typescript-eslint` |
+| `typescript-native` (`npm:typescript@7`) | 7.0.2 | `type-check:ts7`, the native Go compiler |
+
+TypeScript 7 is the native port: it exposes only `lib/version.cjs` and an `unstable/*`
+API, so `typescript/lib/tsc` (the compiler as a library) no longer exists and it cannot
+resolve `.vue` modules. `vue-tsc` patches that library and `typescript-eslint` imports the
+classic compiler API, so both still need TypeScript 5. pnpm resolves a package's
+`typescript` peer from the workspace root, so a single project cannot provide two
+versions; `typescript` therefore stays on 5.9.3 as the toolchain's provider, and
+TypeScript 7 runs as `typescript-native` over every TypeScript-only project
+(`vite.config.ts`, `vitest.config.ts`, `playwright.config.ts`, `e2e/**`) via
+`tsconfig.ts7.json`.
+
+Drop the split once `vue-tsc` and `typescript-eslint` support the native port: remove
+`typescript-native`, `tsconfig.ts7.json` and the `type-check:ts7` script, and point
+`typescript` at 7.x. See `odd/tasks/typescript-7.md` for the evidence behind this shape.
+
 ## Project Setup
 
 ```sh
