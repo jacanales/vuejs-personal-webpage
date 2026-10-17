@@ -90,8 +90,15 @@ vite.config.ts(22,7): error TS2322: Type 'string' is not assignable to type 'num
 
 and GREEN again once reverted. `vue-tsc` was confirmed to resolve `node_modules/.pnpm/typescript@5.9.3/.../lib/tsc.js`.
 
-## Residual limitation and the alternative
+## Residual limitation and the chosen layout
 
-The application surface (`src/**`, which imports `.vue`) is still type-checked by TS 5 through `vue-tsc`, because TS 7 cannot read `.vue` at all. TypeScript 7 owns the config and `e2e` surface today.
+The application surface (`src/**`, which imports `.vue`) is still type-checked by TS 5 through `vue-tsc`, because TS 7 cannot read `.vue` at all. TypeScript 7 owns the config and `e2e` surface today. That is the accepted trade-off, not an oversight.
 
-If the requirement is instead that the package literally named `typescript` be 7.x, the only sound layout is a second pnpm workspace project (e.g. `tools/toolchain`) holding `typescript@5.9.3`, `vue-tsc` and the eslint stack, with `resolvePeersFromWorkspaceRoot: false`. That splits the dependency manifest and moves `eslint.config.js`, which is why it was not done unasked.
+L8 (user decision, verbatim): `A`
+
+Chosen from two options put to the user after the measurements in L4:
+
+- **A, adopted:** `typescript` stays 5.9.3 as the single peer provider, and TypeScript 7 runs as `typescript-native` in the build gate.
+- **B, rejected:** make the package literally named `typescript` be 7.x by moving `typescript@5.9.3`, `vue-tsc` and the eslint stack into a second pnpm workspace project (e.g. `tools/toolchain`) with `resolvePeersFromWorkspaceRoot: false`. That splits the dependency manifest and moves `eslint.config.js`.
+
+A was chosen for one manifest, one lockfile, and no split for editors or Dependabot. B stays a valid migration path if the native port gains `.vue` support or if `typescript` must literally be 7.x.
