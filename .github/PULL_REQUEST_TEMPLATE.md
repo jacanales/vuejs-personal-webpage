@@ -4,8 +4,9 @@
 
 ## 🎫 Related Ticket
 
-<!-- Optional. Link a Jira ticket (e.g. `JACD-123`) or a GitHub issue
-(`Closes #123`) when one exists, and drop it entirely when none does. Chores,
+<!-- Optional. Link the full Jira URL (e.g. https://jacd.atlassian.net/browse/JACD-123)
+or a GitHub issue (`Closes #123`) when one exists, and drop it entirely when none
+does. A URL is one click for the reviewer; a bare key forces a search. Chores,
 typo fixes and one-off adjustments need no ticket; the review is the record.
 Reference only, never invent one. -->
 
