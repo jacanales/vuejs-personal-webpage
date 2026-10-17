@@ -45,3 +45,7 @@ playwright-report/
 
 # Local Next.js/Turbopack artifacts, not part of this project
 .next
+
+# Local design and test-run artifacts
+.impeccable/
+.vitest/
