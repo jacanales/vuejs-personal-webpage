@@ -213,8 +213,8 @@ importers:
         specifier: ^10.13.0
         version: 10.13.0(supports-color@8.1.1)
       eslint-plugin-playwright:
-        specifier: ^2.12.1
-        version: 2.12.1(eslint@10.13.0(supports-color@8.1.1))
+        specifier: ^2.12.2
+        version: 2.12.2(eslint@10.13.0(supports-color@8.1.1))
       eslint-plugin-vue:
         specifier: ^10.11.1
         version: 10.11.1(@typescript-eslint/parser@8.71.2(eslint@10.13.0(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@10.13.0(supports-color@8.1.1))(vue-eslint-parser@10.4.1(eslint@10.13.0(supports-color@8.1.1))(supports-color@8.1.1))
@@ -1293,8 +1293,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-playwright@2.12.1:
-    resolution: {integrity: sha512-JhavNuYBIq7SE/Zg9Esf9RGHkXoDbzrEKS383cowzMyvZ4JMbmdNCN6CoW+RU1Cjzwcoea1tou0je58uXmT/9A==}
+  eslint-plugin-playwright@2.12.2:
+    resolution: {integrity: sha512-sYRCyAEACD3URVoFTfldZcvZNdlJ1r5414gilOTsDCu26PY7l4dUl/3o9ohIEltZgaDS1VXD1mG5xU1KlIGJSw==}
     engines: {node: '>=16.9.0'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -3351,7 +3351,7 @@ snapshots:
     dependencies:
       eslint: 10.13.0(supports-color@8.1.1)
 
-  eslint-plugin-playwright@2.12.1(eslint@10.13.0(supports-color@8.1.1)):
+  eslint-plugin-playwright@2.12.2(eslint@10.13.0(supports-color@8.1.1)):
     dependencies:
       eslint: 10.13.0(supports-color@8.1.1)
       globals: 17.13.0
